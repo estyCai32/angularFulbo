@@ -20,6 +20,10 @@ export class LeagueServiceService {
   constructor(private httpClient:HttpClient) {}
 
   getCurrentLeagues(country:string){
-    return this.httpClient.get<league[]>(`https://v3.football.api-sports.io/leagues?country=${country}&current=true`, httpOptions);
+    return this.httpClient.get<league[]>(`https://v3.football.api-sports.io/leagues?country=${country}&current=true&season=2022`, httpOptions);
+  }
+
+  getStandingForLeague(league:number, season:number){
+    return this.httpClient.get<any[]>(`https://v3.football.api-sports.io/standings?league=${league}&season=${season}`, httpOptions);
   }
 }

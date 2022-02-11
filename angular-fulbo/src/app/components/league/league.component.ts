@@ -10,17 +10,28 @@ import { LeagueServiceService } from "../../service/league-service.service";
 export class LeagueComponent implements OnInit {
   ligasArgentinas: league[] = [];
 
-  constructor(leagueService:LeagueServiceService) {
-    leagueService.getCurrentLeagues("argentina").subscribe((data: league[]) => {
+  constructor(private leagueService:LeagueServiceService) {
+    leagueService.getCurrentLeagues("argentina").subscribe((data: any) => {
 
-      this.ligasArgentinas = data;
-      console.log(typeof data);
-      console.log(typeof this.ligasArgentinas);
+      this.ligasArgentinas = data.response;
+
       console.log(this.ligasArgentinas);
     });
   }
 
   ngOnInit(): void {
+
+  }
+
+  getStandigs() :  void{
+    for(let ligas of this.ligasArgentinas){
+      this.leagueService.getStandingForLeague(ligas.league.id,2022).subscribe((data:any)=>{
+        console.log(data);
+      }); 
+       
+    }
+
+    
   }
 
 }

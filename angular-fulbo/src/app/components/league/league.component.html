@@ -1,8 +1,11 @@
 <div>
     <ul>
         <li *ngFor="let liga of ligasArgentinas">
-            {{liga.league.name}}
+            {{liga.league.id}} - {{liga.league.name}}
         </li>
     </ul>
 
 </div>
+
+
+<button (click)="getStandigs()">Button</button>

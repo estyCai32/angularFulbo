@@ -1,4 +1,4 @@
-export interface league {
+ export interface league {
     country: {
         name: string,
         code: string,

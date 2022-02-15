@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { league } from 'src/app/interfaces/league';
 import { LeagueServiceService } from "../../service/league-service.service";
@@ -10,17 +11,43 @@ import { LeagueServiceService } from "../../service/league-service.service";
 export class LeagueComponent implements OnInit {
   ligasArgentinas: league[] = [];
 
-  constructor(leagueService:LeagueServiceService) {
-    leagueService.getCurrentLeagues("argentina").subscribe((data: league[]) => {
+  partidosDeHoy: any[] = [];
+  
 
-      this.ligasArgentinas = data;
-      console.log(typeof data);
-      console.log(typeof this.ligasArgentinas);
-      console.log(this.ligasArgentinas);
-    });
+  constructor(private leagueService:LeagueServiceService) {
+
   }
 
   ngOnInit(): void {
+    //obtener fecha de hoy  
+    const date = new Date();
+    this.leagueService.obtenerPartidosFecha(2,2021,parsearFecha(date))
+    .subscribe((data: any) => {
+      //metodo
+      console.log(data);
+    });
   }
 
+
 }
+
+
+function parsearFecha(date: Date): string {
+    let year= date.getFullYear().toString();
+    let month = date.getMonth()+1;
+    let monthFinal = "";
+    let day = date.getDate().toString();
+
+
+    if(month.toString().length == 1){
+      month.toString();
+      monthFinal= `0${month}`
+    }
+
+    if(day.length == 1){
+      day= `0${day}`
+    }
+
+    return `${year}-${monthFinal}-${day}`;
+}
+

@@ -5,19 +5,73 @@
     <title>Futbol en Angular</title>
 </head>
 
-<nav>
-    <ul>
-        <li>
-            <a href="">Primera Divison</a>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+            Futbol Argentino
+          </a>
+          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Primera Division</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">B Nacional</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">B Metropolitana</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Primera C</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Copa Argentina</a></li>
+          </ul>
         </li>
-        <li>
-            <a href="">B Nacional</a>
+
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+            Copas
+          </a>
+          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Copa Libertadores</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Copa Sudamericana</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Champions League</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Europa League</a></li>
+          </ul>
         </li>
-        <li>
-            <a href="">B Metropolitana</a>
+
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+            Futbol Internacional
+          </a>
+          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Premier League</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Serie A</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Bundesliga</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Ligue 1</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">La Liga</a></li>
+          </ul>
         </li>
-        <li>
-            <a href="">Primera C</a>
+
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+            Selecciones
+          </a>
+          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Elim. Conmebol</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Elim. Europa</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Elim. Concacaf</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Elim. Asia</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Elim. Oceania</a></li>
+          </ul>
         </li>
-    </ul>
+
+
+        
+      </ul>
+    </div>
+</div>
 </nav>
+
+<router-outlet></router-outlet>

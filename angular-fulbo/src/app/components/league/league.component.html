@@ -1,1 +1,23 @@
-league component
+<div class="container">
+    <div *ngFor="let partido of partidosDeHoy">      
+        <div class="container-cards">
+            <div class="card">
+                <div class="card-team-info">
+                    <img [src]="partido.teams.home.logo" alt="">
+                    <span>{{partido.teams.home.name}}</span>
+                </div>
+                <div class="goals">
+                    <div class="goal">0</div>
+                    <span>VS</span>
+                    <div class="goal">0</div>
+                </div>
+                <div class="card-team-info">
+                    <span>{{partido.teams.away.name}}</span>
+                    <img [src]="partido.teams.away.logo" alt="">        
+                </div>
+            </div>
+        </div>  
+
+    </div>
+    
+</div>

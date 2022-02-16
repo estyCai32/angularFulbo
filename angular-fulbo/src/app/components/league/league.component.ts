@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { league } from 'src/app/interfaces/league';
 import { LeagueServiceService } from "../../service/league-service.service";
@@ -21,10 +20,9 @@ export class LeagueComponent implements OnInit {
   ngOnInit(): void {
     //obtener fecha de hoy  
     const date = new Date();
-    this.leagueService.obtenerPartidosFecha(2,2021,parsearFecha(date))
-    .subscribe((data: any) => {
-      //metodo
-      console.log(data);
+    this.leagueService.obtenerPartidosFecha(2,2021,parsearFecha(date)).subscribe((data: any) => {
+      this.partidosDeHoy = data.response;
+      console.log(this.partidosDeHoy);
     });
   }
 

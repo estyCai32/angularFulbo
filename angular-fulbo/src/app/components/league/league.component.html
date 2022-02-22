@@ -1,23 +1,71 @@
-<div class="container">
-    <div *ngFor="let partido of partidosDeHoy">      
-        <div class="container-cards">
+<h2>Partidos De Hoy</h2>
+
+<div *ngFor="let partido of partidosDeHoy; let i = index " class="container-matchs">
+  <h6 *ngIf="(i == 0)">{{partido.league.name}}</h6>
+  <div class="container-cards">
+    <div class="card">
+
+      <div class="match-status"
+        *ngIf="partido.fixture.status.short == 'FT' || partido.fixture.status.short == 'AET' || partido.fixture.status.short == 'PEN' ">
+        Finalizado
+      </div>
+
+      <div class="match-status"
+        *ngIf="partido.fixture.status.short == '2H' || partido.fixture.status.short == '1H' || partido.fixture.status.short == 'ET' ">
+        {{partido.fixture.status.elapsed}}"
+      </div>
+
+      <div class="match-status" *ngIf="partido.fixture.status.short == 'HT'">
+        Entretiempo
+      </div>
+
+      <div class="match-status" *ngIf="partido.fixture.status.short == 'NS'">
+        {{partido.fixture.date}}
+      </div>
+
+
+      <div>
+        <div class="card-team-info">
+          <img [src]="partido.teams.home.logo" alt="">
+          <span>{{partido.teams.home.name}}</span>
+        </div>
+        <div class="goals">
+          <div class="goal">{{partido.goals.home}}</div>
+          <span>VS</span>
+          <div class="goal">{{partido.goals.away}}</div>
+        </div>
+        <div class="card-team-info">
+          <span>{{partido.teams.away.name}}</span>
+          <img [src]="partido.teams.away.logo" alt="">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- <div class="container-cards">
             <div class="card">
                 <div class="card-team-info">
                     <img [src]="partido.teams.home.logo" alt="">
                     <span>{{partido.teams.home.name}}</span>
                 </div>
                 <div class="goals">
-                    <div class="goal">0</div>
-                    <span>VS</span>
-                    <div class="goal">0</div>
+                    <div class="match-status">
+                         18:00
+                    </div>
+                    <div class="goals-info">
+                        <div class="goal">{{partido.score.fulltime.home}}</div>
+                        <span>VS</span>
+                        <div class="goal">{{partido.score.fulltime.away}}</div>
+                    </div>
                 </div>
                 <div class="card-team-info">
                     <span>{{partido.teams.away.name}}</span>
                     <img [src]="partido.teams.away.logo" alt="">        
                 </div>
             </div>
-        </div>  
-
-    </div>
-    
-</div>
+        </div>   -->

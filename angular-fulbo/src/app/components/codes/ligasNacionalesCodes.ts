@@ -1,4 +1,4 @@
-enum ligasNacionalesCodes{
+export enum ligasNacionalesCodes{
     ligaArgentina = 128,
     primeraBNacional = 129,
     bMetropolitana= 131,

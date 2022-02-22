@@ -1,5 +1,5 @@
 
-enum selecciones{
+export enum selecciones{
     elim_conmebol = 34,
     elim_europa= 32,
     elim_concacaf = 31,

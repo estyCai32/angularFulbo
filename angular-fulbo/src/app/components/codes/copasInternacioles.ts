@@ -1,4 +1,4 @@
-enum copasInternacionales{
+export enum copasInternacionales{
     copaLibertadores = 13,
     copaSudamerica = 11,
     championsLeague =2,

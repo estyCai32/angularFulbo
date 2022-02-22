@@ -1,4 +1,4 @@
-enum torneosInternacionales{
+export enum torneosInternacionales{
     premierLeague= 39,
     serieA= 135,
     league1= 61,

@@ -1,0 +1,44 @@
+.team-logo{
+    width: 18px;
+}
+
+td{
+   text-align: center;
+   padding: 5px;
+}
+
+.info-team{
+    text-align: start;
+    padding-right: 50px;
+}
+
+table{
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.team-points{
+    background-color: azure;
+}
+
+h4{
+    text-align: center;
+}
+
+th{
+    text-align: center;
+}
+.stadings-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+

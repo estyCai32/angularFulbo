@@ -1,0 +1,86 @@
+<div class="group">
+
+  <div class="stadings-container">
+    <div class="table table-container">
+      <h4>Grupo A</h4>
+      <table class="table-bordered">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Equipo</th>
+            <th>PTS</th>
+            <th>PJ</th>
+            <th>G</th>
+            <th>E</th>
+            <th>P</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>G</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of tablaGrupoA">
+            <td [ngClass]="e.rank <= 4 ? 'bg-success' : ''">{{e.rank}}</td>
+            <td class="info-team">
+              <img [src]="e.team.logo" class="team-logo">
+              {{e.team.name}}
+            </td>
+            <td class="team-points">{{e.points}}</td>
+            <td>{{e.all.played}}</td>
+            <td>{{e.all.win}}</td>
+            <td>{{e.all.draw}}</td>
+            <td>{{e.all.lose}}</td>
+            <td>{{e.all.goals.for}}</td>
+            <td>{{e.all.goals.against}}</td>
+            <td>{{e.goalsDiff}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table table-container">
+      <h4>Grupo B</h4>
+      <table class="table-bordered">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Equipo</th>
+            <th>PTS</th>
+            <th>PJ</th>
+            <th>G</th>
+            <th>E</th>
+            <th>P</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>G</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of tablaGrupoB">
+            <td [ngClass]="e.rank <= 4 ? 'bg-success' : ''">{{e.rank}}</td>
+            <td class="info-team">
+              <img [src]="e.team.logo" class="team-logo">
+              {{e.team.name}}
+            </td>
+            <td class="team-points">{{e.points}}</td>
+            <td>{{e.all.played}}</td>
+            <td>{{e.all.win}}</td>
+            <td>{{e.all.draw}}</td>
+            <td>{{e.all.lose}}</td>
+            <td>{{e.all.goals.for}}</td>
+            <td>{{e.all.goals.against}}</td>
+            <td>{{e.goalsDiff}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="fixture-container">
+
+  </div>
+
+</div>
